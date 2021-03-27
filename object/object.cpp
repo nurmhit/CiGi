@@ -119,15 +119,7 @@ int main( void )
       vertical *= -1;
 
     }
-    /*double right_delta = 0.01;
-    if(right > 3)
-      right_delta = 0.1;
-    if(right > 20)
-      right_delta = 1;
-    if(cam_z <=-3 && vertical == -1)
-    {
-      right += right_delta;
-    }*/
+
     glm::mat4 View       = glm::lookAt(
         glm::vec3(x[i],2,y[i]), // Camera is at (4,3,3), in World Space
         glm::vec3(0,0,0), // and looks at the origin
@@ -328,62 +320,6 @@ int main( void )
     // in the "MVP" uniform
     glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &MVP[0][0]);
 
-    // 1rst attribute buffer : vertices
-    /*glEnableVertexAttribArray(vertexPosition_modelspaceID);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-    glVertexAttribPointer(
-        vertexPosition_modelspaceID, // The attribute we want to configure
-        3,                  // size
-        GL_FLOAT,           // type
-        GL_FALSE,           // normalized?
-        0,                  // stride
-        (void*)0            // array buffer offset
-    );
-
-    glEnableVertexAttribArray(vertexColorID);
-    glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
-    glVertexAttribPointer(
-        vertexColorID,               // The attribute we want to configure
-        3,                           // size
-        GL_FLOAT,                    // type
-        GL_FALSE,                    // normalized?
-        0,                           // stride
-        (void*)0                     // array buffer offset
-    );
-    // Draw the triangle !
-    glDrawArrays(GL_TRIANGLES, 0, 3); // 3 indices starting at 0 -> 1 triangle
-
-    glDisableVertexAttribArray(vertexPosition_modelspaceID);
-    glDisableVertexAttribArray(vertexColorID);
-
-    glEnableVertexAttribArray(vertexPosition_modelspaceID);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer2);
-    glVertexAttribPointer(
-        vertexPosition_modelspaceID, // The attribute we want to configure
-        3,                  // size
-        GL_FLOAT,           // type
-        GL_FALSE,           // normalized?
-        0,                  // stride
-        (void*)0            // array buffer offset
-    );
-
-    // 2nd attribute buffer : colors
-    glEnableVertexAttribArray(vertexColorID);
-    glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
-    glVertexAttribPointer(
-        vertexColorID,               // The attribute we want to configure
-        3,                           // size
-        GL_FLOAT,                    // type
-        GL_FALSE,                    // normalized?
-        0,                           // stride
-        (void*)0                     // array buffer offset
-    );
-
-    // Draw the triangle !
-    glDrawArrays(GL_TRIANGLES, 0, 3); // 3 indices starting at 0 -> 1 triangle
-
-    glDisableVertexAttribArray(vertexPosition_modelspaceID);
-    glDisableVertexAttribArray(vertexColorID);*/
 
     glEnableVertexAttribArray(vertexPosition_modelspaceID);
     glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer3);

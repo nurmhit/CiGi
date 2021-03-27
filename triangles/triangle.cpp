@@ -116,15 +116,7 @@ int main( void )
       vertical *= -1;
 
     }
-    /*double right_delta = 0.01;
-    if(right > 3)
-      right_delta = 0.1;
-    if(right > 20)
-      right_delta = 1;
-    if(cam_z <=-3 && vertical == -1)
-    {
-      right += right_delta;
-    }*/
+
     glm::mat4 View       = glm::lookAt(
         glm::vec3(x[i],2,y[i]), // Camera is at (4,3,3), in World Space
         glm::vec3(0,0,0), // and looks at the origin
